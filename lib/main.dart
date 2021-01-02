@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: MyHomePage(title: 'Review places :D'),
+      home: MyHomePage(title: 'Review starwars places :D'),
     );
   }
 }
@@ -29,12 +29,17 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  String location = 'Tatuin';
+  String description =
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Congue mauris rhoncus aenean vel elit scelerisque mauris. Posuere sollicitudin aliquam ultrices sagittis.\n\n Venenatis tellus in metus vulputate eu scelerisque felis imperdiet.';
+  double review = 4.5;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
           title: Text(widget.title),
         ),
-        body: new DescriptionPlace());
+        body: new DescriptionPlace(location, description, review));
   }
 }

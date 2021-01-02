@@ -1,18 +1,25 @@
 import 'package:flutter/material.dart';
+import 'rating.dart';
+import 'review_list.dart';
 
 class DescriptionPlace extends StatelessWidget {
+  final String namePlace;
+  final double stars;
+  final String descriptionPlace;
+
+  DescriptionPlace(this.namePlace, this.descriptionPlace, this.stars);
+
   @override
   Widget build(BuildContext ctx) {
-    final star = Container(
-      margin: EdgeInsets.only(top: 323, right: 3),
-      child: Icon(Icons.star, color: Color.fromRGBO(224, 176, 20, 1)),
-    );
-
     final description = Container(
-      margin: EdgeInsets.only(top: 32, right: 20, left: 20),
+      margin: EdgeInsets.only(top: 20, right: 20, left: 20),
       child: Text(
-        "Lorem ipsum dolor sit amet consectetur adipiscing elit auctor, sapien leo praesent etiam iaculis metus ut, consequat lacinia taciti ultrices at tellus integer. \n\nNulla ad conubia donec senectus netus ultrices semper, metus malesuada ridiculus mollis varius himenaeos tellus, potenti habitasse natoque phasellus integer tristique.",
-        style: TextStyle(fontSize: 12),
+        descriptionPlace,
+        style: TextStyle(
+            fontFamily: "Lato",
+            fontSize: 16,
+            fontWeight: FontWeight.bold,
+            color: Color.fromRGBO(112, 111, 112, 1)),
         textAlign: TextAlign.left,
       ), // Text.
     );
@@ -20,21 +27,23 @@ class DescriptionPlace extends StatelessWidget {
     final titleStars = Row(
       children: <Widget>[
         Container(
-          margin: EdgeInsets.only(top: 320.0, left: 20.0, right: 20.0),
+          margin: EdgeInsets.only(top: 30.0, left: 20.0, right: 20.0),
           child: Text(
-            "Duwili Ella",
-            style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+            namePlace,
+            style: TextStyle(
+              fontFamily: "Lato",
+              fontSize: 32,
+              fontWeight: FontWeight.w900,
+            ),
             textAlign: TextAlign.left,
           ), // Child
         ), // Container
-        Row(
-          children: <Widget>[star, star, star, star, star],
-        ),
+        Container(child: Rating(3, marginTop: 30)) // Container
       ],
     );
 
     return Column(
-      children: <Widget>[titleStars, description], // <Widget>[]
+      children: <Widget>[titleStars, description, ReviewList()], // <Widget>[]
     ); // Column
   }
 }
