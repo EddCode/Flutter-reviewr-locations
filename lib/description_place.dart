@@ -36,7 +36,7 @@ class DescriptionPlace extends StatelessWidget {
               fontWeight: FontWeight.w900,
             ),
             textAlign: TextAlign.left,
-          ), // Child
+          ), // Text
         ), // Container
         Container(child: Rating(3, marginTop: 30)) // Container
       ],

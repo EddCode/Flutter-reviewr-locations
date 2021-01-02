@@ -50,6 +50,9 @@ flutter:
   #   - images/a_dot_ham.jpeg
   assets:
     - assets/img/people.jpg
+    - assets/img/cloneWars.jpg
+    - assets/img/nancy.jpg
+    - assets/img/rafa.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

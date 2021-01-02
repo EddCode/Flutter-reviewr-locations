@@ -2,10 +2,11 @@ import 'package:flutter/material.dart';
 import 'rating.dart';
 
 class Review extends StatelessWidget {
-  final String photoPath = "assets/img/people.jpg";
   final double stars;
+  final String avatar;
+  final String name;
 
-  Review(this.stars);
+  Review(this.name, this.stars, this.avatar);
 
   @override
   Widget build(BuildContext ctx) {
@@ -16,15 +17,14 @@ class Review extends StatelessWidget {
         decoration: BoxDecoration(
             shape: BoxShape.circle,
             image: DecorationImage(
-                fit: BoxFit.cover,
-                image: AssetImage(photoPath)) // DecorationImage
+                fit: BoxFit.cover, image: AssetImage(avatar)) // DecorationImage
             ) // BoxDecoration
         ); // Container
 
     final userName = Container(
       margin: EdgeInsets.only(left: 20),
       child: Text(
-        "Edgar Fig",
+        name,
         textAlign: TextAlign.left,
         style: TextStyle(fontFamily: "Lato", fontSize: 18),
       ), // Text
@@ -40,7 +40,7 @@ class Review extends StatelessWidget {
             style: TextStyle(
                 fontFamily: "Lato",
                 fontSize: 13,
-                color: Color.fromRGBO(212, 42, 21, 1)), // TextStyle
+                color: Color.fromRGBO(122, 122, 125, 1)), // TextStyle
           ), // Text
         ), //Container
         Rating(
@@ -52,13 +52,14 @@ class Review extends StatelessWidget {
     );
     final userComment = Container(
       margin: EdgeInsets.only(left: 20),
-      child: Text("There is an iconic place",
-          textAlign: TextAlign.left,
-          style: TextStyle(
-              fontFamily: "Lato",
-              fontSize: 16,
-              fontWeight: FontWeight.w800) // TextStyle
-          ), // Text
+      child: Text(
+        "There is an iconic place",
+        style: TextStyle(
+            fontFamily: "Lato",
+            fontSize: 16,
+            fontWeight: FontWeight.w400), // TextStyle
+        textAlign: TextAlign.left,
+      ), // Text
     ); //Container
 
     final userDetails = Column(
